@@ -5,7 +5,7 @@ properties([
 ])                                                                              
                                                                                 
 node('master') {                                                                 
-    stage('CLOUD: Host Debug Information') {                                    
+    stage('Host Debug Information') {                                    
         sh 'set -x && hostname && uname -a && free -h && df -h'                 
     }                                                                           
     deleteDir()                                                                 
@@ -13,8 +13,12 @@ node('master') {
         checkout scm                                                            
     }                                                                           
     try {                                                                       
-        stage('CLOUD: Prepare factory') {                                       
-            sh "#!/bin/bash\npython3 <(curl -sL https://github.com/liquidinvestigations/factory/raw/master/install.py) factory"
+        stage('Prepare factory') {                                       
+            sh "git clone https://github.com/liquidinvestigations/factory.git factory"
+            sh "cat /opt/jenkins-files/snapshots/jessie.factory.gz | zcat | ./factory/factory import jessie"
+        }                                                                       
+        stage('install rootio_web') {                                       
+            sh "./factory/factory --platform jessie run --share rootio-install-scripts:/mnt/scripts --commit --yes /mnt/scripts/install-rootio.sh"
         }                                                                       
     } finally {
         deleteDir()
