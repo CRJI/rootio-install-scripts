@@ -15,7 +15,7 @@ node('master') {
     try {                                                                       
         stage('Prepare factory') {                                       
             sh "git clone https://github.com/liquidinvestigations/factory.git factory"
-            sh "cat /root/rootio/snapshots/jessie.factory.gz | zcat | ./factory/factory import jessie"
+            sh "cat /opt/jenkins-files/snapshots/jessie.factory.gz | zcat | ./factory/factory import jessie"
         }                                                                       
         stage('Say something, jessie!') {                                       
             sh "./factory/factory --platform jeessie run echo xxx"
