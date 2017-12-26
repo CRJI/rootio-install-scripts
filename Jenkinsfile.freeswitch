@@ -17,8 +17,8 @@ node('master') {
             sh "git clone https://github.com/liquidinvestigations/factory.git factory"
             sh "cat /opt/jenkins-files/snapshots/jessie.factory.gz | zcat | ./factory/factory import jessie"
         }                                                                       
-        stage('Say something, jessie!') {                                       
-            sh "./factory/factory --platform jeessie run echo xxx"
+        stage('install freeswitch') {                                       
+            sh "./factory/factory --platform jessie run --share rootio-install-scripts:/mnt/scripts --commit --yes /mnt/scripts/install-freeswitch.sh"
         }                                                                       
     } finally {
         deleteDir()
