@@ -10,6 +10,7 @@
     - libzmq3-dev
     - python-psycopg2
     - supervisor
+    - nginx
 
 - user:
     name: rootio
@@ -64,3 +65,7 @@
 - copy:
     src: supervisor/rootio_web.conf
     dest: /etc/supervisor/conf.d/rootio_web.conf
+
+- copy:
+    src: nginx/rootio_web.conf
+    dest: /etc/nginx/sites-enabled/rootio_web.conf
