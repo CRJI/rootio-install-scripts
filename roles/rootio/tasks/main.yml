@@ -20,7 +20,7 @@
   become_user: postgres
 
 - postgresql_db:
-    name: web
+    name: rootio_web
     owner: rootio
   become: true
   become_user: postgres
@@ -30,7 +30,7 @@
     dest: /opt/rootio/rootio_web
 
 - pip:
-    virtualenv: /opt/rootio/venvs/web
+    virtualenv: /opt/rootio/venvs/rootio_web
     requirements: /opt/rootio/rootio_web/requirements.txt
 
 - file:

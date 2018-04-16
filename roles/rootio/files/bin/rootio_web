@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source /opt/rootio/venvs/web/bin/activate
+source /opt/rootio/venvs/rootio_web/bin/activate
 exec /opt/rootio/rootio_web/manage.py "$@"
