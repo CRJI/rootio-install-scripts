@@ -38,7 +38,13 @@
   with_items:
     - /opt/rootio/rootio_web/instance
     - /opt/rootio/rootio_web/instance/log
+    - /opt/rootio/bin
 
 - template:
     src: rootio.cfg
     dest: /opt/rootio/rootio_web/instance/rootio.cfg
+
+- copy:
+    src: bin/manage
+    dest: /opt/rootio/bin/manage
+    mode: 0755
