@@ -1,5 +1,10 @@
 # Installing RootIO
 
+These instructions assume a Debian 8 (Jessie) machine because that's what
+FreeSWITCH [recommends][].
+
+[recommends]: https://freeswitch.org/confluence/display/FREESWITCH/Debian+8+Jessie)
+
 ```
 git clone https://github.com/CRJI/rootio-install-scripts
 cd rootio-install-scripts
@@ -12,3 +17,12 @@ sudo service nginx reload
 
 Freeswitch and other services listen on a bunch of public TCP and UDP ports.
 Consider setting up a firewall.
+
+Add the following line to your local `/etc/hosts`, replacing `192.168.1.2` with
+the address of the server you have just set up:
+
+```
+192.168.1.2 rootio.example.org
+```
+
+Then point your browser to http://rootio.example.org and enjoy RootIO!
