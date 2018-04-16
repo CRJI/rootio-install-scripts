@@ -1,2 +1,2 @@
 #!/bin/bash -ex
-exec ansible-playbook rootio.yml
+exec ansible-playbook rootio.yml "$@"
