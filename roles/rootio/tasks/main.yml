@@ -1,0 +1,25 @@
+- apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - virtualenv
+    - postgresql
+    - postgresql-server-dev-all
+    - build-essential
+    - libpython-dev
+    - libzmq3-dev
+    - python-psycopg2
+
+- user:
+    name: rootio
+
+- postgresql_user:
+    name: rootio
+  become: true
+  become_user: postgres
+
+- postgresql_db:
+    name: web
+    owner: rootio
+  become: true
+  become_user: postgres
