@@ -29,6 +29,7 @@
 - git:
     repo: https://github.com/rootio/rootio_web
     dest: /opt/rootio/rootio_web
+    version: ansible
 
 - pip:
     virtualenv: /opt/rootio/venvs/rootio_web

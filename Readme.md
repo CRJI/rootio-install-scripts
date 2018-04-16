@@ -25,4 +25,5 @@ the address of the server you have just set up:
 192.168.1.2 rootio.example.org
 ```
 
-Then point your browser to http://rootio.example.org and enjoy RootIO!
+Then point your browser to http://rootio.example.org, log in as `admin` with
+password `123456`, and enjoy RootIO!
