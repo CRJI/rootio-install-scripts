@@ -37,12 +37,23 @@
     state: directory
   with_items:
     - /opt/rootio/rootio_web/instance
-    - /opt/rootio/rootio_web/instance/log
     - /opt/rootio/bin
+
+- file:
+    path: "{{ item }}"
+    state: directory
+    owner: rootio
+  with_items:
+    - /opt/rootio/rootio_web/instance/log
+    - /opt/rootio/content
 
 - template:
     src: rootio.cfg
     dest: /opt/rootio/rootio_web/instance/rootio.cfg
+
+- template:
+    src: config.py
+    dest: /opt/rootio/rootio_web/rootio/config.py
 
 - copy:
     src: bin/manage
