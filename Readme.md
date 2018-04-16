@@ -10,6 +10,7 @@ git clone https://github.com/CRJI/rootio-install-scripts
 cd rootio-install-scripts
 sudo ./install-ansible.sh
 ./run-ansible
+sudo service freeswitch restart
 (cd /opt/rootio/rootio_web; sudo -u rootio /opt/rootio/bin/rootio_web reset_db)
 sudo supervisorctl update
 sudo service nginx reload

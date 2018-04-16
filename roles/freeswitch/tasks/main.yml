@@ -1,0 +1,34 @@
+- apt_repository:
+    repo: deb http://ftp.debian.org/debian jessie-backports main
+    filename: backports
+
+- apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - curl
+    - apt-transport-https
+
+- apt_key:
+    url: https://files.freeswitch.org/repo/deb/debian/freeswitch_archive_g0.pub
+
+- apt_repository:
+    repo: deb http://files.freeswitch.org/repo/deb/freeswitch-1.6/ jessie main
+    filename: freeswitch
+
+- apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - freeswitch-meta-all
+    - freeswitch-mod-shout
+
+- lineinfile:
+    path: /etc/freeswitch/autoload_configs/event_socket.conf.xml
+    line: '<param name="apply-inbound-acl" value="0.0.0.0/0"/>'
+    regexp: 'apply-inbound-acl'
+
+- lineinfile:
+    path: /etc/freeswitch/autoload_configs/modules.conf.xml
+    line: '<load module="mod_shout"/>'
+    regexp: 'mod_shout'
