@@ -5,6 +5,7 @@ git clone https://github.com/CRJI/rootio-install-scripts
 cd rootio-install-scripts
 sudo ./install-ansible.sh
 ./run-ansible
+sudo supervisorctl update
 ```
 
 Freeswitch and other services listen on a bunch of public TCP and UDP ports.

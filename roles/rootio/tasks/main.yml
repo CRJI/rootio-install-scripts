@@ -9,6 +9,7 @@
     - libpython-dev
     - libzmq3-dev
     - python-psycopg2
+    - supervisor
 
 - user:
     name: rootio
@@ -59,3 +60,7 @@
     src: bin/rootio_web
     dest: /opt/rootio/bin/rootio_web
     mode: 0755
+
+- copy:
+    src: supervisor/rootio_web.conf
+    dest: /etc/supervisor/conf.d/rootio_web.conf
