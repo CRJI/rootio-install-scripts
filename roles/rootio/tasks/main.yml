@@ -23,3 +23,22 @@
     owner: rootio
   become: true
   become_user: postgres
+
+- git:
+    repo: https://github.com/rootio/rootio_web
+    dest: /opt/rootio/rootio_web
+
+- pip:
+    virtualenv: /opt/rootio/venvs/web
+    requirements: /opt/rootio/rootio_web/requirements.txt
+
+- file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - /opt/rootio/rootio_web/instance
+    - /opt/rootio/rootio_web/instance/log
+
+- template:
+    src: rootio.cfg
+    dest: /opt/rootio/rootio_web/instance/rootio.cfg
