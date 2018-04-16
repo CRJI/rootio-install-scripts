@@ -56,6 +56,6 @@
     dest: /opt/rootio/rootio_web/rootio/config.py
 
 - copy:
-    src: bin/manage
-    dest: /opt/rootio/bin/manage
+    src: bin/rootio_web
+    dest: /opt/rootio/bin/rootio_web
     mode: 0755
