@@ -2,7 +2,7 @@
 
 These instructions assume a Debian 8 (Jessie) machine because that's what
 FreeSWITCH recommends:
-https://freeswitch.org/confluence/display/FREESWITCH/Debian+8+Jessie)
+https://freeswitch.org/confluence/display/FREESWITCH/Debian+8+Jessie
 
 ```
 git clone https://github.com/CRJI/rootio-install-scripts
