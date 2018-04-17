@@ -21,3 +21,7 @@
     src: bin/station-telephony-run
     dest: /opt/rootio/bin/station-telephony-run
     mode: 0755
+
+- copy:
+    src: supervisor/station_telephony.conf
+    dest: /etc/supervisor/conf.d/station_telephony.conf
