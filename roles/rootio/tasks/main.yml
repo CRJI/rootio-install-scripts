@@ -21,7 +21,7 @@
   become_user: postgres
 
 - postgresql_db:
-    name: rootio_web
+    name: rootio
     owner: rootio
   become: true
   become_user: postgres
