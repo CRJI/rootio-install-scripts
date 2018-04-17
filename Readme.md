@@ -10,7 +10,9 @@ cd rootio-install-scripts
 sudo ./install-ansible.sh
 ./run-ansible
 sudo service freeswitch restart
-(cd /opt/rootio/rootio_web; sudo -u rootio /opt/rootio/bin/rootio_web reset_db)
+cd /opt/rootio/rootio_web
+sudo -u rootio /opt/rootio/bin/rootio_web reset_db
+sudo -u rootio /opt/rootio/bin/rootio_web demo_data
 sudo supervisorctl update
 sudo service nginx reload
 ```
