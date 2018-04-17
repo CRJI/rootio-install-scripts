@@ -1,0 +1,18 @@
+- apt_repository:
+    repo: deb http://ftp.debian.org/debian jessie-backports main
+    filename: backports
+
+- apt:
+    name: apt-transport-https
+    state: latest
+
+- apt_key:
+    url: https://packagecloud.io/github/git-lfs/gpgkey
+
+- apt_repository:
+    repo: deb https://packagecloud.io/github/git-lfs/debian/ jessie main
+    filename: git-lfs
+
+- apt:
+    name: git-lfs
+    state: latest
