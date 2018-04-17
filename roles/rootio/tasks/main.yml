@@ -27,3 +27,5 @@
   become_user: postgres
 
 - import_tasks: tasks/rootio_web.yml
+
+- import_tasks: tasks/station_telephony.yml

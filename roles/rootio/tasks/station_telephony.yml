@@ -1,0 +1,18 @@
+- git:
+    repo: https://github.com/rootio/station-telephony
+    dest: /opt/rootio/station-telephony
+    version: ansible
+
+- pip:
+    virtualenv: /opt/rootio/venvs/station-telephony
+    requirements: /opt/rootio/station-telephony/requirements.txt
+
+- file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - /opt/rootio/station-telephony/instance
+
+- template:
+    src: station_telephony/settings.py
+    dest: /opt/rootio/station-telephony/instance/settings.py
