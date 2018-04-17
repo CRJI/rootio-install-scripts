@@ -26,6 +26,19 @@
   become: true
   become_user: postgres
 
+- file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - /opt/rootio/bin
+
+- file:
+    path: "{{ item }}"
+    state: directory
+    owner: rootio
+  with_items:
+    - /opt/rootio/content
+
 - import_tasks: tasks/rootio_web.yml
 
 - import_tasks: tasks/station_telephony.yml
