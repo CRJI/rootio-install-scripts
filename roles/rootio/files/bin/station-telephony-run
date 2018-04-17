@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+source /opt/rootio/venvs/station-telephony/bin/activate
+cd /opt/rootio/station-telephony
+exec ./run.py

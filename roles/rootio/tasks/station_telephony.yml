@@ -16,3 +16,8 @@
 - template:
     src: station_telephony/settings.py
     dest: /opt/rootio/station-telephony/instance/settings.py
+
+- copy:
+    src: bin/station-telephony-run
+    dest: /opt/rootio/bin/station-telephony-run
+    mode: 0755
