@@ -5,7 +5,7 @@ FreeSWITCH recommends:
 https://freeswitch.org/confluence/display/FREESWITCH/Debian+8+Jessie
 
 ```
-git clone https://github.com/CRJI/rootio-install-scripts
+git clone https://github.com/rootio/install
 cd rootio-install-scripts
 sudo ./install-ansible.sh
 ./run-ansible
