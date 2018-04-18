@@ -2,6 +2,8 @@
 - name: Install Root.io
   hosts: all
   become: yes
+  vars_files:
+    - config.yml
   roles:
     - freeswitch
     - rootio
