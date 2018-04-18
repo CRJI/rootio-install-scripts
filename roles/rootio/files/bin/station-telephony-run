@@ -2,4 +2,5 @@
 
 source /opt/rootio/venvs/station-telephony/bin/activate
 cd /opt/rootio/station-telephony
+export PYTHONPATH=/opt/rootio/station-telephony:/opt/rootio/rootio_web
 exec ./run.py
