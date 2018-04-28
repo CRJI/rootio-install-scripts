@@ -6,7 +6,7 @@ https://freeswitch.org/confluence/display/FREESWITCH/Debian+8+Jessie
 
 ```
 git clone https://github.com/rootio/install
-cd rootio-install-scripts
+cd install
 sudo ./install-ansible.sh
 echo 'domain: rootio.example.org' > config.yml
 ./run-ansible
